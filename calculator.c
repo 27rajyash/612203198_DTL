@@ -1,23 +1,5 @@
 #include <stdio.h>
 
-int hexToDec(char hex[]) {
-    int decimal = 0;
-    int power = 0;
-    for (int i = strlen(hex) - 1; i >= 0; i--) {
-        char digit = hex[i];
-        int decimalDigit = 0;
-        if (digit >= '0' && digit <= '9') {
-            decimalDigit = digit - '0';
-        } else if (digit >= 'A' && digit <= 'F') {
-            decimalDigit = 10 + digit - 'A';
-        } else if (digit >= 'a' && digit <= 'f') {
-            decimalDigit = 10 + digit - 'a';
-        }
-        decimal += decimalDigit * pow(16, power);
-        power++;
-    }
-    return decimal;
-}
 
 int main() {
     int num1, num2, sum;
@@ -41,9 +23,6 @@ int main() {
     printf("Multiplication of the numbers: %d\n", mul);
     printf("Division of the numbers: %d\n", div);
 
-    char hexadecimal[] = "ABF"; // input hexadecimal number
-    int decimal = hexToDec(hexadecimal);
-    printf("The decimal equivalent of hexadecimal %s is %d.\n", hexadecimal, decimal);
 
     return 0;
 }
