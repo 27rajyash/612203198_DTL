@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+
 int hexToDec(char hex[]) {
     int decimal = 0;
     int power = 0;
@@ -17,6 +18,16 @@ int hexToDec(char hex[]) {
         power++;
     }
     return decimal;
+}
+
+int power(int no,int exp)
+{
+    int result=1;
+    for (int i=0; i<exp;i=i+1)
+    {
+        result=result*no;
+    }
+    return result;
 }
 
 
@@ -41,6 +52,7 @@ int main() {
     printf("Subtraction of the numbers: %d\n", sub);
     printf("Multiplication of the numbers: %d\n", mul);
     printf("Division of the numbers: %d\n", div);
+    printf("%d raised to %d is %d",num1,num2,power(num1,num2));
 
     char hexadecimal[] = "ABF"; // input hexadecimal number
     int decimal = hexToDec(hexadecimal);
